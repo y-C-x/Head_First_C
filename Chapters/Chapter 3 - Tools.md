@@ -22,7 +22,7 @@ fscanf(stdin,"%19s",info);
 ### Redirection
 
 ```c
->> ./geo2json < gpsdata.csv 1> output.json 2> errors.txt
+> ./geo2json < gpsdata.csv 1> output.json 2> errors.txt
 ```
 
 ### secret_message.c
@@ -50,7 +50,7 @@ int main()
 ## Pipe
 
 ```c
->> (./bermuda | ./geo2json) < spook.csv > output.json
+> (./bermuda | ./geo2json) < spook.csv > output.json
 ```
 
 > multi pipes - > pipeliine
@@ -60,6 +60,8 @@ IMPORTENT
 remember to include the brackets
 
 ## Stream
+
+---
 
 ### fopen
 
@@ -74,7 +76,85 @@ FILE *out_file = fopen("output.txt","w");
 "r" = read  
 "a" = append
 
+---
+SAFETY CHECK
+
 ```c
-fprintf(out_file,"%s,%s","1","2");
+FILE *in;
+if (!(in = fopen("sth.txt","r")))
+{
+  fprintf(stderr,"Can't open file.\n");
+  return 1;
+}
+```
+
+---
+
+```c
+fprintf(out_file,"%s,%s\n","1","2");
 fscanf(in_file,"%79[^\n]\n",sentence);
 ```
+
+### fclose
+
+```c
+fclose(in_file);
+fclose(out_file);
+```
+
+Normally, a process can have at most 256 streams.
+
+### categorize.c
+
+```c
+> ./categorize UFO aliens.csv Elvis elvises.csv the_rest.csv
+```
+
+search result of `UFO` goes to `aliens.csv`;  
+search result of `Elvis` goes to `elvises.csv`;
+the rest goes to `the_rest.csv`;
+
+### cmd Option
+
+```c
+ps -ae
+```
+
+list all the processes, including the background ones.
+
+#### getopt
+
+```c
+#include <unistd.h>
+
+...
+
+while((ch = getopt(argc, argv,"ae:")) != EOF)
+{
+  switch(ch){
+    ...
+    case 'e':
+      engine_count = optarg;
+    ...
+  }
+  // skip the optitions that have been read
+  argc -= optind;
+  argv += optind;
+}
+```
+
+`:` means cmd `e` requires an argument;  
+`optind` stores the number of options read from the `getopt()` cmd.  
+`optarg` reads the required argument;
+
+### order_pizza.c
+
+```c
+> ./order_pizza -d now -t Pineapple
+```
+
+IMPORTANT
+One can use `--` in bash to break from the getopt()
+
+for example  
+>`set_temperature -c -- -4`
