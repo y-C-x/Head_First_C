@@ -128,4 +128,55 @@ int main()
 Note  
 `qsort()` will modify the original array.
 
-p334
+---
+
+## Function Pointer Array
+
+### dear_johns.c
+
+```c
+enum response_type {DUMP, SECOND_CHANCE, MARRIAGE};
+
+void (*replies[])(response) = {dump, second_chance, marriage};
+
+return_type (* pointer var) (argument type)
+```
+
+order of functions in fux array should match that of in the enum.
+
+---
+
+**IMPORTANT**
+
+function's name is pointer alike, which store the `address` of a function.
+
+---
+
+## Variadic Function *
+
+`print_ints(3,79,101,32);`
+
+```c
+#include <stdarg.h>
+
+void print_ints(int args, ...)
+{
+  va_list ap;
+  va_start(ap,args);
+  int i;
+  for (i = 0; i < args; i++){
+    printf("argument: %i\n",va_arg(ap,int));
+  }
+  va_end(ap);
+}
+```
+
+---
+
+Note  
+You can use `va_start()`, `va_arg()`, `va_end()` to control `va_list`
+
+---
+
+### price_drinks.c
+
