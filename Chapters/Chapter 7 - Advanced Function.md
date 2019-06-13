@@ -87,7 +87,7 @@ int compare_areas(const void* a, const void *b)
   }
 ```
 
-#### sort alphabetically 
+#### sort alphabetically
 
 ```c
 int compare_names(const void* a, const void* b)
@@ -146,8 +146,7 @@ order of functions in fux array should match that of in the enum.
 
 ---
 
-**IMPORTANT**
-
+**IMPORTANT**  
 function's name is pointer alike, which store the `address` of a function.
 
 ---
@@ -179,4 +178,3 @@ You can use `va_start()`, `va_arg()`, `va_end()` to control `va_list`
 ---
 
 ### price_drinks.c
-

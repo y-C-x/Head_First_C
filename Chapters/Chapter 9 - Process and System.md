@@ -1,6 +1,6 @@
 # Chapter 9 - Process and System
 
-if you have any question, go through the chapter in the book. 
+if you have any question, go through the chapter in the book.
 
 ## `system()`
 
@@ -70,6 +70,13 @@ int main(int argc, char *argv[])
 fprintf(stderr, "Error: %s", strerror(errno));
 ```
 
+```c
+void error (char* s){
+  fprintf(stderr, "%s: %s", s, strerror(errno));
+  exit(1);
+}
+```
+
 ---
 
 **IMPORTANT**  
@@ -95,3 +102,5 @@ if(!pid){
 ---
 
 ## RSS (skip here)
+
+### newshound.c
