@@ -71,8 +71,8 @@ fprintf(stderr, "Error: %s", strerror(errno));
 ```
 
 ```c
-void error (char* s){
-  fprintf(stderr, "%s: %s", s, strerror(errno));
+void error (char* msg){
+  fprintf(stderr, "%s: %s\n", msg, strerror(errno));
   exit(1);
 }
 ```

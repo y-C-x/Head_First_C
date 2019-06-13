@@ -156,5 +156,8 @@ while((ch = getopt(argc, argv,"ae:")) != EOF)
 IMPORTANT
 One can use `--` in bash to break from the getopt()
 
-for example  
->`set_temperature -c -- -4`
+for example
+
+```c  
+set_temperature -c -- -4
+```

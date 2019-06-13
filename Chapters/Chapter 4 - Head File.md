@@ -98,8 +98,10 @@ DO NOT RECOMPILE EVERYTHING
 
 steps:
 
-1. gcc -c *.c
-2. gcc *o -o launch
+```c
+> gcc -c *.c
+> gcc *o -o launch
+```
 
 Target - Dependence - Rule
 
