@@ -92,7 +92,7 @@ Note
 Port range : 0 - 65535
 Choose port no. higher than 1024 to be safe.
 
-#### Port Reuse
+### Port Reuse
 
 **IMPORTANT**  
 There's delay in binding port.
@@ -107,3 +107,81 @@ if(Setsockopt(listener_d, SOL_SOCKET, SO_REUSEADDR, (char *)&reuse, sizeof(int))
 ```
 
 ---
+
+### `recv` - Read from clients
+
+```c
+<bytes read> = recv(<descriptor>, <buffer>, <bytes to read>, 0);
+```
+
+---
+IMPORTANT
+
+* string does not end with `\0`
+* when users type in telnet, string ends with `\r\n`
+* `recv()` returns char's number read, -1 if error, 0 if the client shuts the connection.
+* `recv()` cannot receive all chars in one call, which means *you might have to call `recv()` multiple times*
+
+---
+
+for example
+`Who'` `s t` `here?\r\n`
+
+#### read_in fx
+
+```c
+int read_in(int socket, char *buf, int len)
+{
+  char *s = buf;
+  int slen = len;
+  int c = recv(socket, s, slen, 0);
+  while ((c > 0) && (s[c - 1] != '\n'))
+  {
+    s += c;
+    slen -= c;
+    c = recv(socket, s, slen, 0);
+  }
+
+  if (c < 0)
+    return c;
+  else if (c == 0)
+    buf[0] = '\0';  // read nothing
+  else
+    s[c - 1] = '\0';  // replace \r with \0 // should be c-2 here
+  return len - slen;
+}
+```
+
+#### ikkp_server.c
+
+`read_in()` and `strcasecmp()` have problems here.
+
+Notice that `strcasecmp()` only compares the specific length of chars in buff with
+the given std answer, which makes it possible to return true wile comparing "AB" and "ABxxxxx"
+while the no. of chars to be compared is 2.
+
+### Use `fork()`
+
+#### ikkp_server_3.c
+
+close `connect` socket in parent process;  
+close `listerner` socket in child process;
+
+```c
+while(1) {
+  int connect_d = accept(...);
+
+  if(!fork()){ // in child
+    close(listener_d);
+    ...
+    close(connect_d); // close when communication is finished
+    exit(0); // exit the child process
+  }
+
+  close(connect_d);
+}
+```
+
+### network client
+
+have to be done in US... (update later)
