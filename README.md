@@ -1,6 +1,6 @@
 # READ ME
 
-2019/06/16.
+2019/06/16.  
 This is a summary and reading note for "Head First C". The book is originally written by David Griffiths and Dawn Griffiths in 2012, translated to Chinese later by Yichao Chen in 2013.
 
 In the `Chapter` folder one may find 12 chapters in total for basic C language syntax and design concept.
