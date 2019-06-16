@@ -55,3 +55,7 @@ pthread_mutex_unlock(&a_lock);
 ...
 
 #### Dead lock
+
+---
+
+[More about Thread](https://www.cnblogs.com/mq0036/p/3710475.html)

@@ -77,22 +77,26 @@ IMPORTANT
 * `sizeof(msg)` 返还的是`指针`的大小 - 8 bytes (x64)
 * `sizeof(quote)`返还的是`数组`的大小 - 15
 
-#### 指针退化
+#### 指针退化 - Pointer Degeneration
 
-`数组变量`和`指针`变量有一点小小的区别，所以把数组赋给指针时千万要小心。假如把数组赋给指针变量，指针变量值会包含数组的地址信息，而对数组的长度一无所知，相当于指针丢失了一些信息。我们把这种信息的丢失称为`退化`。  
+`数组`变量和`指针`变量有一点小小的区别，所以把数组赋给指针时千万要小心。假如把数组赋给指针变量，指针变量值会包含数组的地址信息，而对数组的长度一无所知，相当于指针丢失了一些信息。我们把这种信息的丢失称为`退化`。  
 只要把数组传递给函数，数组免不了退化为指针，但需要记清楚代码中有哪些地方发生过数组退化，因为它们会引发一些不易察觉的错误。
 
-#### 指针类型
+When you pass `char s[]` into a function, it degenerates to a pointer which points to the address of first char in `s[]`.
+
+#### 指针类型 - Pointer Type
 
 因为不同类型的数据的大小不一样。
+
+Different type of data have different size.
 
 Note
 
 ```c
 int does[] = {1,2,3,1000};
+...
+does[3] == *(does+3) == *(3+does) == 3[does]
 ```
-
-> does[3] == *(does+3) == *(3+does) == 3[does]
 
 #### Scanf() / fgets()
 

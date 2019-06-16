@@ -4,7 +4,7 @@
 
 ### tour.c
 
-```c 
+```c
 typedef struct island{
   char *name;
   char* opens;
