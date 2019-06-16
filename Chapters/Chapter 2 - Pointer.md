@@ -90,6 +90,7 @@ When you pass `char s[]` into a function, it degenerates to a pointer which poin
 
 Different type of data have different size.
 
+
 Note
 
 ```c
