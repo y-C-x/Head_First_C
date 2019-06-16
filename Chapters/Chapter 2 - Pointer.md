@@ -84,13 +84,42 @@ IMPORTANT
 
 When you pass `char s[]` into a function, it degenerates to a pointer which points to the address of first char in `s[]`.
 
+For a better understanding, read this [sizeof(pointer)](https://blog.csdn.net/driversmith/article/details/6236893)
+
 #### 指针类型 - Pointer Type
 
 因为不同类型的数据的大小不一样。
 
 Different type of data have different size.
 
+For example,
 
+```c
+int nums[] = {1, 2, 3};
+printf("nums' address is %p\n", nums);
+printf("nums + 1 's address is %p\n", nums + 1);
+```
+
+you will get a result similar to
+
+```c
+nums' address is 0x....ac
+nums + 1 ' address is 0x....b0
+```
+
+`nums+1` is `4 bytes` from `nums`
+
+if you repeat the calculation above for `char`, you will get `1 bytes` in difference.
+
+The differnece is about address, not the size of a pointer.
+
+---
+
+IMPORTANT
+
+`sizeof(pointer)` is always `4 bytes` for `x86`, and `8 byptes` for x64.
+
+---
 
 Note
 
