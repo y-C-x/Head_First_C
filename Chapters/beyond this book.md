@@ -38,3 +38,8 @@ a ^ b | xor | 01 ^ 11 = 10
 >> | right shift | 10 >> 1 = 1 
 
 you can use `<<` to quickly double an `int`
+
+### comma
+
+```c
+for (i = 0; 
