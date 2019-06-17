@@ -17,16 +17,17 @@ same for `--i` and `i--`
 return (x == 1) ? 2 : 3;
 ```
 
-is equivalent to 
+is equivalent to
 
 ```c
 if (x == 1)
     return 2;
-else 
+else
     return 3;
 ```
 
 ### bit operation
 
-:-: | :-: 
-~a  | 
+operator | description | example
+:---: | :---: | :---:
+ ~a  | invert | 00 -> 11
