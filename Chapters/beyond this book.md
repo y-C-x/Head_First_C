@@ -11,7 +11,7 @@ i++; // inc 1 and return the old i
 
 same for `--i` and `i--`
 
-### Ternary Conditional Operator
+### ternary conditional operator
 
 ```c
 return (x == 1) ? 2 : 3;
@@ -25,3 +25,5 @@ if (x == 1)
 else 
     return 3;
 ```
+
+### bit operation
