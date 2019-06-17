@@ -27,3 +27,6 @@ else
 ```
 
 ### bit operation
+
+:-: | :-: 
+~a  | 
