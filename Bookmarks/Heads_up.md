@@ -11,4 +11,5 @@ page 253 - `union` samples
 page 271 - struct name in `typedef` (case when can't be waive) 
 page 303 - `valgrind` (debug)
 page 308 - `valgrind` (design principle)
-page 344 - 
+page 344 - variadic function
+page 348 - 
