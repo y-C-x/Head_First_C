@@ -17,4 +17,4 @@ page 360 - `gcc` (.a)
 page 363 - lib (.a)
 page 426 - `system()`, `fork()`
 page 443 - `pipe (grep)`
-page 
+page 447 - `news_opener.c`
