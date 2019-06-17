@@ -8,4 +8,5 @@ page 180 - gcc
 page 204 - makefile
 page 248 - union (design principle)
 page 253 - union samples
-page 271 - 
+page 271 - struct name in typedef (case when can't be waive) 
+page 
