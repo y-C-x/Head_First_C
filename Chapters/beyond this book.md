@@ -30,4 +30,5 @@ else
 
 operator | description | example
 :---: | :---: | :---:
- ~a  | invert | 00 -> 11
+ ~a  | invert | ~(00) = 11
+a & b | and | 01 & 11 =  
