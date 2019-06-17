@@ -10,4 +10,7 @@ i++; // inc 1 and return the old i
 ```
 
 same for `--i` and `i--`
- 
+
+### Ternary Conditional Operator
+
+re
