@@ -31,4 +31,8 @@ else
 operator | description | example
 :---: | :---: | :---:
  ~a  | invert | ~(00) = 11
-a & b | and | 01 & 11 =  
+a & b | and | 01 & 11 = 01
+a \| b | or | 01 | 11 = 11
+a ^ b | xor | 01 ^ 11 = 10
+ << | left shift | 10 << 1 = 100
+>> | right  
