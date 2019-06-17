@@ -19,4 +19,4 @@ page 426 - `system()`, `fork()`
 page 443 - `pipe (grep)`
 page 447 - `news_opener.c`
 page 478 - `recv()`
-page 490 - client 
+page 490 - client (need to be tested in US)
