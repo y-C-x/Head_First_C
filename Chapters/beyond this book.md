@@ -13,4 +13,15 @@ same for `--i` and `i--`
 
 ### Ternary Conditional Operator
 
-re
+```c
+return (x == 1) ? 2 : 3;
+```
+
+is equivalent to 
+
+```c
+if (x == 1)
+    return 2;
+else 
+    return 3;
+```
